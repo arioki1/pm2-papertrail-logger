@@ -5,8 +5,8 @@ const pm2 = require('pm2');
 const winston = require('winston');
 require('winston-papertrail').Papertrail;
 
-const PAPERTRAIL_HOST = 'logs.papertrailapp.com';
-const PAPERTRAIL_PORT = 40709;
+const PAPERTRAIL_HOST = 'logs5.papertrailapp.com';
+const PAPERTRAIL_PORT = 54654;
 
 const winstonPapertrail = new winston.transports.Papertrail({
     host: PAPERTRAIL_HOST,
@@ -73,7 +73,7 @@ pmx.initModule({
             bus.on('reconnect attempt', function () {
                 console.log('PM2 Papertrail: Bus reconnecting');
             });
-    
+
             bus.on('close', function () {
                 console.log('PM2 Papertrail: Bus closed');
             });
